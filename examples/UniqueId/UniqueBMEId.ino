@@ -63,7 +63,10 @@ void setup()
   }
 
   uint32_t uniqueID = bme.UniqueId();
-  Serial.printf("Unique ID: 0x%08X\n", uniqueID);
+  char buffer[9];
+  sprintf(buffer, "%08X", uniqueID);
+  Serial.print("Unique ID: 0x");
+  Serial.println(buffer);
 
 }
 
